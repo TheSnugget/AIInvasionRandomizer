@@ -1,5 +1,6 @@
 # !!! requires manunally modifying stuff on lines 16-19 and 108 !!!
 # on start, replace the contents of unownedCountriesList (line 19) with the contents of the country list for the current region, then remove the starting country from the list.
+# when a character is asked for advice, find that character on character.ai
 
 import random
 from random_word import RandomWords
