@@ -130,5 +130,3 @@ def setAction():
     action()
 
 setAction()
-
-# python C:\pyton\AIInvasionRandomizer\AIInvasionRandomizer.py
