@@ -24,18 +24,18 @@ invasionModifierList = ["Explosives.", "Guns.", "Knives.", "Nothing.", "Big Rock
 soldierModifierList = ["Very Tired.", "Forklift Certified.", "Banned from Operating Forklifts in 107 Countries.", "Clownly.", "Dancing.", "Poor.", "Idiotic.", "Materialistic.", "Suffering from a Terrible Back Injury.", "Divorced.", "Frightening.", "Extremely Drunk.", "Laughing Really Hard.", "Rich.", "8 Feet Tall.", "Chickens.", "Disguised As Gorillas.", "Cosplaying As Barack Obama.", "Fish.", "Clinically Insane.", "Made of Jewels.", "Football Players (American)", "Football Players (Not American)", "Martians.", "Floating.", "Vampires.", "Riding Motorcycles.", "Dressed as Jesus Christ.", "1 Year Old.", "Eating Salmon.", "Chainsmoking.", "Conspiracy Theorists.", "Biologists.", "The Real MrBeast.", "The Fake MrBeast.", "Stuffed Inside A Robot Suit.", "Goats.", "Colorblind.", "Blind.", "Benny Worm", "Really Big Fans of Apples (probably horses).", "Actually Just Blades of Grass.", "Drinking Nitroglycerin.", "a Swarm of Bees.", "Sporting really long Beards.", "Huge fans of Weezer."]
 allianceModifierList = ["over A Cup Of Tea.", "by Pleading on My Knees.", "by Threatening Them with A Nuke I don't have.", "by Bribing Them with The Most Recent Resource I've Aqcuired.", "by Bribing Them With Drugs.", "By Drugging Them.", "by Poisoning Their Water Supply and Offering To Clean It.", "with a Blood Sacrifice.", "With a MrBeast Challenge.", "By Convincing Them that The Moon Is Evil.", "By Inviting Them Onto The Joe Rogan Podcast.", "By Holding Them At Gunpoint.", "By Strategically Assassinating Any Political Figures Who Would Deny The Treaty.", "By Offering to Build A Corner Store In Their Country.", "By having an intellectual conversation about the state of modern AI."]
 buildingList = ["A Statue of Hatsune Miku", "A Gun Factory", "A Great Wall", "A Dam", "A Bridge to Iceland", "Nuclear Silos", "A Really Big Chess Board", "An Anvil Factory", "A Car or Two", "A God", "A Rest Stop along the highway", "A reason to Fear", "A Rocket to piss off NASA", "A Portal to Hell", "A bed", "A Really Cool Gas Station", "A replica of the Bass Pro Shop Pyramid", "A replica of the Eiffel Tower", "A Large Beehive", "A Big Pumkin with a Pumpkin Factory inside"]
-characterList = ["Spamton G. Spamton", "Hatsune Miku", "Santa Claus", "Elon Musk", "SM64 Mario", "Psychologist", "Saul Goodman", "Oblivion Guard", "sans", "Ralsei", "Engineer TF2", "Jerma985", "Waluigi", "Joe Biden", "Jimmy 'MrBeast' Donaldson", "Minecraft Steve", "Walter White", "a chair", "Ronald Reagan", "Ronald McDonald", "DougDoug", "Shadow the Hedgehog", "Chimpanzee", "Dr. Eggman", "Mr. Krabs", "Man In The Corner", "Scout TF2", "Donkey Kong", "Hornet", "Jesus Christ", "Neil Cicierega", "Vacuum Salesman Michael Jackson", "Noelle Holdiay", "Doctor Eggman", "You", "ChatGPT"]
-weightList = ["Standard", "Defensive", "Offensive", "Chaos"]
+characterList = ["Spamton G. Spamton", "Hatsune Miku", "Santa Claus", "Elon Musk", "SM64 Mario", "Psychologist", "Saul Goodman", "Oblivion Guard", "Sans Undertale", "Ralsei Deltarune", "Engineer TF2", "Jerma985", "Waluigi", "Joe Biden", "Jimmy 'MrBeast' Donaldson", "Minecraft Steve", "Walter White", "a chair", "Ronald Reagan", "Ronald McDonald", "DougDoug", "Shadow the Hedgehog", "Chimpanzee", "Dr. Eggman", "Mr. Krabs", "Man In The Corner", "Scout TF2", "Donkey Kong", "Hornet", "Jesus Christ", "Neil Cicierega", "Vacuum Salesman Michael Jackson", "Noelle Deltarune", "Doctor Eggman", "You", "ChatGPT"]
+modeList = ["Standard", "Defensive", "Offensive", "Chaos"]
 
 def invade():
- invasionPrompt = 'Invade ' + adjacentCountriesList[random.randint(0,len(adjacentCountriesList)-1)] + ' with ' + invasionModifierList[random.randint(0,39)] + ' The soldiers will be ' + soldierModifierList[random.randint(0,45)]
+ invasionPrompt = 'Invade ' + adjacentCountriesList[random.randint(0,len(adjacentCountriesList)-1)] + ' with ' + invasionModifierList[random.randint(0,len(invasionModifierList)-1)] + ' The soldiers will be ' + soldierModifierList[random.randint(0,len(soldierModifierList)-1)]
  print(invasionPrompt)
  engine.say(invasionPrompt)
  engine.runAndWait()
 
 
 def ally():
- alliancePrompt = 'I\'ll Ally with ' + adjacentCountriesList[random.randint(0,len(adjacentCountriesList)-1)] + ' ' + allianceModifierList[random.randint(0,14)] + ' The diplomat will be ' + soldierModifierList[random.randint(0,45)]
+ alliancePrompt = 'I\'ll Ally with ' + adjacentCountriesList[random.randint(0,len(adjacentCountriesList)-1)] + ' ' + allianceModifierList[random.randint(0,len(allianceModifierList)-1)] + ' The diplomat will be ' + soldierModifierList[random.randint(0,len(soldierModifierList)-1)]
  print(alliancePrompt)
  engine.say(alliancePrompt)
  engine.runAndWait()
@@ -57,7 +57,7 @@ def research():
 
 
 def advice():
- advicePrompt = 'I\'ll ask ' + characterList[random.randint(0,35)] + ' for advice.'
+ advicePrompt = 'I\'ll ask ' + characterList[random.randint(0,len(characterList)-1)] + ' for advice.'
  print(advicePrompt)
  engine.say(advicePrompt)
  engine.runAndWait()
@@ -65,7 +65,7 @@ def advice():
 
 def anarchy():
  anarchyIntroList = ['Limiting yourself is for cowards. I\'ll do two things at once.', 'Why do one when two better?', 'I\'ll trade cohesive narrative for progress and do two things in one turn.','I\'ll do two things. First:']
- anarchyIntro = anarchyIntroList[random.randint(0,3)]
+ anarchyIntro = anarchyIntroList[random.randint(0,len(anarchyIntroList)-1)]
  print(anarchyIntro)
  engine.say(anarchyIntro)
  engine.runAndWait()
@@ -77,14 +77,14 @@ def anarchy():
 
 
 def terraform():
- terraformPrompt = 'I think I\'ll ' + europeTerraformList[random.randint(0,10)]
+ terraformPrompt = 'I think I\'ll ' + europeTerraformList[random.randint(0,len(europeTerraformList)-1)]
  print(terraformPrompt)
  engine.say(terraformPrompt)
  engine.runAndWait()
 
 
 def build():
- buildPrompt = 'I think I\'ll build ' + buildingList[random.randint(0,19)] + ' in ' + ownedCountriesList[random.randint(0,len(ownedCountriesList)-1)] + '.'
+ buildPrompt = 'I think I\'ll build ' + buildingList[random.randint(0,len(buildingList)-1)] + ' in ' + ownedCountriesList[random.randint(0,len(ownedCountriesList)-1)] + '.'
  print(buildPrompt)
  engine.say(buildPrompt)
  engine.runAndWait()
